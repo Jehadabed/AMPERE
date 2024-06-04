@@ -5,47 +5,47 @@ The triggering mechanism employed in this study is illustrated in the figure bel
 1. **Initialization**
     - EC-Lab® is opened and the following protocol is loaded and ran:
 
-**Technique : 1**
+            **Technique : 1**
 
-External Application
+            External Application
 
-_trig_pot.exe_
+            _trig_pot.exe_
 
-**Technique : 2**
+            **Technique : 2**
 
-Open Circuit Voltage (OCV)
+            Open Circuit Voltage (OCV)
 
-**Technique : 3**
+            **Technique : 3**
 
-Cyclic Voltammetry Advanced (CVA)
+            Cyclic Voltammetry Advanced (CVA)
 
-**Technique : 4**
+            **Technique : 4**
 
-Potentio Electrochemical Impedance Spectroscopy (PEIS)
+            Potentio Electrochemical Impedance Spectroscopy (PEIS)
 
-0V
+            0V
 
-**Technique : 5**
+            **Technique : 5**
 
-Linear Sweep Voltammetry (LSV)
+            Linear Sweep Voltammetry (LSV)
 
-**Technique : 6**
+            **Technique : 6**
 
-Chronopotentiometry (CP)
+            Chronopotentiometry (CP)
 
-**Technique : 7**
+            **Technique : 7**
 
-External Application
+            External Application
 
-_end_pot.exe_
+            _end_pot.exe_
 
-**Technique : 9**
+            **Technique : 9**
 
-Loop
+            Loop
 
 Go to technique 1 and repeat n times 15
 
-- - EC-Lab® runs the first technique: “trig_pot.exe” . It basically holds proceeding to the next technique before a _trigger_ file is sent to the master computer in the _&lt;user dir&gt;_.
+EC-Lab® runs the first technique: “trig_pot.exe” . It basically holds proceeding to the next technique before a _trigger_ file is sent to the master computer in the _&lt;user dir&gt;_.
     - The “_OT_program.ipnyb_” is started on the OT-2 local Jupyter host and ran.
     - The OT-2 robot moves to the first sample and pauses. It will wait before moving to the next sample until it is triggered again.
     - The “_OT_program.ipnyb_” sends a trigger file from the local Jupyter notebook host to the master computer and then deletes the file locally.
@@ -59,8 +59,8 @@ Go to technique 1 and repeat n times 15
     - This sends the _trigger_ file back to the OT-2 via the master computer and then deletes it from the master computer.
     - This triggers the OT-2 to move to the next sample. The process repeats until all samples are processed.
 
-![A diagram explaining the triggering mechanism.](trigger_diagram.svg)
 
+![A diagram explaining the triggering mechanism.](trigger_diagram.svg)
 **Figure.** A diagram explaining the triggering mechanism.
 
-The software for “tri_pot.exe” and “end_pot.exe” is written in python here[trig_pot.py](trig_pot.py) and [end_pot.py](end_pot.py) and then converted to an .exe package using PyInstaller: <https://pyinstaller.org/>
+The software for “tri_pot.exe” and “end_pot.exe” is written in python here: [trig_pot.py](trig_pot.py) and [end_pot.py](end_pot.py) and then converted to an .exe package using PyInstaller: <https://pyinstaller.org/>
